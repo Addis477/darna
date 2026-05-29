@@ -23,15 +23,12 @@
         .logo__text span { color: var(--gold); }
         .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
         
-        /* Desktop Navigation */
         .nav__list { display: flex; gap: 32px; list-style: none; }
         .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; cursor: pointer; }
         .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
         
-        /* Mobile Menu Button */
         .mobile-menu-btn { background: none; border: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; display: none; }
         
-        /* Side Mobile Navigation */
         .mobile-nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 200; display: none; }
         .mobile-nav { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #0f0f0f; z-index: 201; transition: left 0.3s ease; padding: 30px 20px; border-right: 2px solid var(--gold); }
         .mobile-nav.open { left: 0; }
@@ -53,28 +50,50 @@
         .page-hero h1 span { color: var(--gold); }
         .page-hero p { color: #ddd; margin-top: 10px; }
         
-        /* Special Offers Banner */
-        .offers-banner { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); border-radius: 28px; padding: 30px; margin: 40px 0; text-align: center; }
-        .offers-banner h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
-        .offers-banner h2 i { margin-right: 10px; }
-        .offers-banner p { margin-bottom: 20px; opacity: 0.9; }
-        .offers-scroll { display: flex; gap: 20px; overflow-x: auto; padding: 10px 0; scrollbar-width: thin; }
-        .offer-mini-card { background: rgba(0,0,0,0.4); border-radius: 20px; padding: 16px; min-width: 250px; text-align: left; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); }
-        .offer-mini-card .offer-tag { background: var(--gold); color: #0a0a0a; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; display: inline-block; margin-bottom: 10px; }
-        .offer-mini-card h4 { margin-bottom: 8px; }
-        .offer-mini-card .old { text-decoration: line-through; font-size: 0.8rem; color: #ccc; }
-        .offer-mini-card .new { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+        .offers-section { margin: 50px 0; }
+        .offers-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px; text-align: center; }
+        .offers-section h2 i { color: var(--gold); margin-right: 10px; }
+        .offers-section h2 span { color: var(--gold); }
+        .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .offer-card { background: #141414; border-radius: 24px; overflow: hidden; border: 1px solid #2a2a2a; transition: 0.3s; cursor: pointer; position: relative; }
+        .offer-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+        .offer-badge { position: absolute; top: 15px; left: 15px; background: var(--gold); color: #0a0a0a; padding: 5px 15px; border-radius: 30px; font-weight: 800; font-size: 0.75rem; z-index: 2; }
+        .offer-card img { width: 100%; height: 200px; object-fit: cover; }
+        .offer-card__content { padding: 20px; }
+        .offer-card__content h3 { font-size: 1.3rem; margin-bottom: 8px; }
+        .offer-card__content p { color: #aaa; font-size: 0.85rem; margin-bottom: 12px; }
+        .price-row { margin: 10px 0; }
+        .old-price { text-decoration: line-through; color: #888; font-size: 0.9rem; margin-right: 10px; }
+        .new-price { font-size: 1.5rem; font-weight: 800; color: var(--gold); }
+        .offer-btn { display: inline-block; background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 600; margin-top: 12px; transition: 0.2s; border: none; cursor: pointer; width: 100%; text-align: center; }
+        .offer-btn:hover { background: var(--gold-dark); }
         
-        /* Menu Filters */
-        .menu-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 40px 0 30px; }
+        .menu-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 50px 0 30px; padding-top: 20px; border-top: 1px solid #2a2a2a; }
         .filter-btn { background: #1a1a1a; border: 1px solid #333; color: #ddd; padding: 10px 24px; border-radius: 40px; cursor: pointer; font-weight: 600; transition: 0.2s; }
         .filter-btn:hover, .filter-btn.active { background: var(--gold); color: #0a0a0a; border-color: var(--gold); }
         
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 60px; }
-        .menu-item { background: #141414; border-radius: 20px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #2a2a2a; transition: 0.2s; cursor: pointer; }
-        .menu-item:hover { border-color: var(--gold); transform: translateX(4px); }
-        .menu-item__name { font-weight: 600; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .menu-item { background: #141414; border-radius: 20px; overflow: hidden; border: 1px solid #2a2a2a; transition: 0.2s; cursor: pointer; }
+        .menu-item:hover { transform: translateY(-4px); border-color: var(--gold); }
+        .menu-item-img { width: 100%; height: 160px; object-fit: cover; }
+        .menu-item-content { padding: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .menu-item__name { font-weight: 600; font-size: 1rem; }
         .menu-item__price { font-weight: 800; color: var(--gold); font-size: 1.1rem; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: #141414; border-radius: 28px; max-width: 500px; width: 90%; border: 1px solid var(--gold); overflow: hidden; animation: modalFadeIn 0.3s ease; }
+        @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .modal-img { width: 100%; height: 250px; object-fit: cover; }
+        .modal-body { padding: 24px; }
+        .modal-body h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 8px; }
+        .modal-body .modal-price { font-size: 1.5rem; font-weight: 800; color: var(--gold); margin: 12px 0; }
+        .modal-body .modal-desc { color: #aaa; line-height: 1.6; margin-bottom: 16px; }
+        .modal-ingredients { background: #1a1a1a; padding: 12px 16px; border-radius: 16px; margin: 16px 0; }
+        .modal-ingredients h4 { color: var(--gold); margin-bottom: 8px; font-size: 0.9rem; }
+        .modal-ingredients p { color: #bbb; font-size: 0.85rem; }
+        .modal-actions { display: flex; gap: 12px; margin-top: 20px; }
+        .modal-call { flex: 1; background: var(--gold); color: #0a0a0a; padding: 12px; border-radius: 40px; font-weight: 700; text-decoration: none; text-align: center; border: none; cursor: pointer; }
+        .modal-close { background: #2a2a2a; color: white; padding: 12px 20px; border-radius: 40px; font-weight: 600; cursor: pointer; border: none; }
         
         .footer { background: #030303; padding: 50px 20px 30px; margin-top: 40px; }
         .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
@@ -86,7 +105,7 @@
         .footer__col ul li a { color: #888; text-decoration: none; cursor: pointer; transition: 0.2s; }
         .footer__col ul li a:hover { color: var(--gold); }
         .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; cursor: pointer; transition: 0.2s; }
-        .social-links a:hover { background: var(--gold); color: #0a0a0a; transform: scale(1.1); }
+        .social-links a:hover { background: var(--gold); color: #0a0a0a; }
         .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; color: #666; }
         
         @media (max-width: 768px) { 
@@ -94,14 +113,13 @@
             .mobile-menu-btn { display: block; } 
             .header__inner { justify-content: space-between; } 
             .page-hero h1 { font-size: 2rem; }
-            .offers-scroll { flex-direction: column; }
-            .offer-mini-card { min-width: auto; }
+            .offers-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | <i class="fas fa-tag"></i> SPECIAL OFFERS INSIDE! | <i class="fas fa-phone"></i> CALL 098</div>
+<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | <i class="fas fa-tag"></i> SPECIAL OFFERS! | <i class="fas fa-phone"></i> CALL 098</div>
 
 <header class="header">
     <div class="container header__inner">
@@ -109,8 +127,6 @@
             <div class="logo__icon">🍗</div>
             <div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div>
         </div>
-        
-        <!-- Desktop Navigation -->
         <nav class="desktop-nav">
             <ul class="nav__list">
                 <li><a onclick="navigateTo('index.html')" class="nav__link">Home</a></li>
@@ -119,68 +135,57 @@
                 <li><a onclick="navigateTo('contact.html')" class="nav__link">Contact</a></li>
             </ul>
         </nav>
-        
         <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> CALL 098</a>
-        
-        <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     </div>
 </header>
 
-<!-- Side Mobile Navigation -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-        <h3>MOOJITO®</h3>
-        <button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button>
-    </div>
+    <div class="mobile-nav-header"><h3>MOOJITO®</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
     <ul class="mobile-nav-list">
         <li><a onclick="navigateTo('index.html')">🏠 Home</a></li>
         <li><a onclick="navigateTo('menu.html')">🍔 Menu & Offers</a></li>
         <li><a onclick="navigateTo('about.html')">📖 About</a></li>
         <li><a onclick="navigateTo('contact.html')">📞 Contact</a></li>
     </ul>
-    <div class="mobile-call">
-        <a href="tel:+251983333333"><i class="fas fa-phone"></i> Call 098</a>
+    <div class="mobile-call"><a href="tel:+251983333333"><i class="fas fa-phone"></i> Call 098</a></div>
+</div>
+
+<!-- Modal -->
+<div id="itemModal" class="modal">
+    <div class="modal-content">
+        <img id="modalImg" class="modal-img" src="" alt="">
+        <div class="modal-body">
+            <h2 id="modalName"></h2>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-desc" id="modalDesc"></div>
+            <div class="modal-ingredients"><h4><i class="fas fa-utensils"></i> Ingredients</h4><p id="modalIngredients"></p></div>
+            <div class="modal-actions"><a href="tel:+251983333333" class="modal-call"><i class="fas fa-phone"></i> Call to Order</a><button class="modal-close" onclick="closeModal()">Close</button></div>
+        </div>
     </div>
 </div>
 
 <section class="page-hero">
-    <div class="container">
-        <h1>Our <span>Menu</span> & Offers</h1>
-        <p>Explore our delicious offerings — with exclusive deals!</p>
-    </div>
+    <div class="container"><h1>Our <span>Menu</span> & Offers</h1><p>Click any item to see details — then call us to order!</p></div>
 </section>
 
 <section class="container">
-    <!-- SPECIAL OFFERS SECTION (Integrated) -->
-    <div class="offers-banner">
-        <h2><i class="fas fa-fire"></i> Limited Time Offers!</h2>
-        <p>Grab these deals before they're gone — order now!</p>
-        <div class="offers-scroll">
-            <div class="offer-mini-card">
-                <span class="offer-tag">-15% OFF</span>
-                <h4>Family Feast Combo</h4>
-                <p>Full Roasted Chicken + 4 Wings + Rice + 2 Drinks</p>
-                <span class="old">2,800 ETB</span> → <span class="new">2,380 ETB</span>
+    <!-- OFFERS SECTION -->
+    <div class="offers-section">
+        <h2><i class="fas fa-fire"></i> Limited Time <span>Offers</span></h2>
+        <div class="offers-grid">
+            <div class="offer-card" onclick="showOfferDetail('Family Feast Combo', 2380, 2800, 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80', 'Full Roasted Chicken + 4 pcs Wings + Large Rice + 2 Soft Drinks. Perfect for family dinner!', 'Whole roasted chicken, crispy chicken wings, seasoned rice, choice of soft drinks')">
+                <div class="offer-badge">-15% OFF</div><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80" alt="Family Feast"><div class="offer-card__content"><h3>Family Feast Combo</h3><p>Full Roasted Chicken + 4 Wings + Rice + 2 Drinks</p><div class="price-row"><span class="old-price">2,800 ETB</span><span class="new-price">2,380 ETB</span></div><button class="offer-btn" onclick="event.stopPropagation(); showOfferDetail(...)">View Details</button></div>
             </div>
-            <div class="offer-mini-card">
-                <span class="offer-tag">BUY 1 GET 1</span>
-                <h4>Wings Wednesday</h4>
-                <p>Buy 10 pcs Wings, Get 5 pcs FREE!</p>
-                <span class="new">1,252 ETB + Free</span>
+            <div class="offer-card" onclick="showOfferDetail('Wings Wednesday', 1252, 1880, 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80', 'Buy 10 pcs Wings, Get 5 pcs FREE! + Free garlic sauce. Best value wings deal!', '10 crispy chicken wings + 5 free wings, signature spicy or mild sauce')">
+                <div class="offer-badge">BUY 1 GET 1</div><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Wings"><div class="offer-card__content"><h3>Wings Wednesday</h3><p>Buy 10 pcs Wings, Get 5 pcs FREE!</p><div class="price-row"><span class="old-price">1,880 ETB</span><span class="new-price">1,252 ETB</span></div><button class="offer-btn" onclick="event.stopPropagation(); showOfferDetail(...)">View Details</button></div>
             </div>
-            <div class="offer-mini-card">
-                <span class="offer-tag">-20% OFF</span>
-                <h4>Burger Mania</h4>
-                <p>Any Special Burger + Fries + Drink</p>
-                <span class="old">1,050 ETB</span> → <span class="new">840 ETB</span>
+            <div class="offer-card" onclick="showOfferDetail('Burger Mania', 840, 1050, 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80', 'Any Special Burger + Crispy French Fries + Cold Soft Drink. Ultimate satisfaction!', 'Premium beef patty, fresh lettuce, tomato, cheese, special sauce, crispy fries, cola')">
+                <div class="offer-badge">-20% OFF</div><img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80" alt="Burger"><div class="offer-card__content"><h3>Burger Mania</h3><p>Burger + Fries + Drink</p><div class="price-row"><span class="old-price">1,050 ETB</span><span class="new-price">840 ETB</span></div><button class="offer-btn" onclick="event.stopPropagation(); showOfferDetail(...)">View Details</button></div>
             </div>
-            <div class="offer-mini-card">
-                <span class="offer-tag">-30% OFF</span>
-                <h4>Family Bucket Special</h4>
-                <p>8 pcs Bucket + Large Fries + 1.5L Drink</p>
-                <span class="old">2,500 ETB</span> → <span class="new">1,750 ETB</span>
+            <div class="offer-card" onclick="showOfferDetail('Family Bucket Special', 1750, 2500, 'https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=600&q=80', '8 pcs Crispy Golden Chicken + Large Fries + 1.5L Drink. Feed the whole family!', '8 pieces of signature crispy chicken, large seasoned fries, 1.5L Pepsi')">
+                <div class="offer-badge">-30% OFF</div><img src="https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=600&q=80" alt="Bucket"><div class="offer-card__content"><h3>Family Bucket Special</h3><p>8 pcs Chicken + Large Fries + 1.5L Drink</p><div class="price-row"><span class="old-price">2,500 ETB</span><span class="new-price">1,750 ETB</span></div><button class="offer-btn" onclick="event.stopPropagation(); showOfferDetail(...)">View Details</button></div>
             </div>
         </div>
     </div>
@@ -195,129 +200,106 @@
         <button class="filter-btn" data-cat="drinks">Drinks & Sides</button>
     </div>
     
-    <!-- MENU GRID -->
     <div class="menu-grid" id="menuGrid"></div>
 </section>
 
 <footer class="footer">
     <div class="container">
         <div class="footer__grid">
-            <div class="footer__col">
-                <h3>Moojito <span>®</span></h3>
-                <p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p>
-            </div>
-            <div class="footer__col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a onclick="navigateTo('index.html')">Home</a></li>
-                    <li><a onclick="navigateTo('menu.html')">Menu & Offers</a></li>
-                    <li><a onclick="navigateTo('about.html')">About</a></li>
-                    <li><a onclick="navigateTo('contact.html')">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p>
-                <p><i class="fas fa-envelope"></i> hello@moojito.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
-            </div>
-            <div class="footer__col">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a><i class="fab fa-facebook-f"></i></a>
-                    <a><i class="fab fa-instagram"></i></a>
-                    <a><i class="fab fa-telegram"></i></a>
-                    <a><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
+            <div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div>
+            <div class="footer__col"><h4>Quick Links</h4><ul><li><a onclick="navigateTo('index.html')">Home</a></li><li><a onclick="navigateTo('menu.html')">Menu & Offers</a></li><li><a onclick="navigateTo('about.html')">About</a></li><li><a onclick="navigateTo('contact.html')">Contact</a></li></ul></div>
+            <div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div>
+            <div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a><i class="fab fa-facebook-f"></i></a><a><i class="fab fa-instagram"></i></a><a><i class="fab fa-telegram"></i></a><a><i class="fab fa-tiktok"></i></a></div></div>
         </div>
-        <div class="footer__bottom">
-            <p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p>
-        </div>
+        <div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div>
     </div>
 </footer>
 
 <script>
-    // Navigation function
-    function navigateTo(page) {
-        window.location.href = page;
-    }
+    function navigateTo(page) { window.location.href = page; }
     
-    // Mobile menu functionality
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileOverlay = document.getElementById('mobileNavOverlay');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    
-    function openMobileMenu() {
-        mobileNav.classList.add('open');
-        mobileOverlay.style.display = 'block';
+    function openModal(name, price, img, desc, ingredients) {
+        document.getElementById('modalName').innerText = name;
+        document.getElementById('modalPrice').innerHTML = `${price} ETB`;
+        document.getElementById('modalImg').src = img;
+        document.getElementById('modalDesc').innerText = desc;
+        document.getElementById('modalIngredients').innerHTML = ingredients;
+        document.getElementById('itemModal').style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
     
-    function closeMobileMenu() {
-        mobileNav.classList.remove('open');
-        mobileOverlay.style.display = 'none';
-        document.body.style.overflow = '';
+    function closeModal() { document.getElementById('itemModal').style.display = 'none'; document.body.style.overflow = ''; }
+    
+    function showOfferDetail(name, price, oldPrice, img, desc, ingredients) {
+        document.getElementById('modalName').innerText = name;
+        document.getElementById('modalPrice').innerHTML = `<span style="text-decoration:line-through; color:#888; font-size:1rem;">${oldPrice} ETB</span> &nbsp; ${price} ETB`;
+        document.getElementById('modalImg').src = img;
+        document.getElementById('modalDesc').innerText = desc;
+        document.getElementById('modalIngredients').innerHTML = ingredients;
+        document.getElementById('itemModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
     
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
-    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
-    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+    window.onclick = function(event) { if (event.target === document.getElementById('itemModal')) closeModal(); }
     
-    // Menu Data
+    // COMPLETE MENU WITH IMAGES FOR EVERY ITEM
     const menuItems = [
-        { name: "Normal Shawarma", price: 695, cat: "shawarma" },
-        { name: "Special Darna Shawarma", price: 782, cat: "shawarma" },
-        { name: "Full Roasted Chicken", price: 2213, cat: "shawarma" },
-        { name: "Half Roasted Chicken", price: 1196, cat: "shawarma" },
-        { name: "Full Grilled Chicken", price: 1848, cat: "shawarma" },
-        { name: "Half Grilled Chicken", price: 948, cat: "shawarma" },
-        { name: "Chicken Kabsa", price: 752, cat: "shawarma" },
-        { name: "Chicken Kabsa (Large)", price: 1056, cat: "shawarma" },
-        { name: "Special Burger", price: 591, cat: "burgers" },
-        { name: "Special Burger 2", price: 835, cat: "burgers" },
-        { name: "Special Burger 4", price: 904, cat: "burgers" },
-        { name: "Cheese Burger", price: 500, cat: "burgers" },
-        { name: "Beef Burger", price: 448, cat: "burgers" },
-        { name: "Chicken Sandwich", price: 800, cat: "burgers" },
-        { name: "Egg Sandwich", price: 322, cat: "burgers" },
-        { name: "Family Bucket (8 pcs)", price: 1900, cat: "crispy" },
-        { name: "Mega Five (5 pcs)", price: 1256, cat: "crispy" },
-        { name: "Golden Four (4 pcs)", price: 1013, cat: "crispy" },
-        { name: "Triple Crunch (3 pcs)", price: 856, cat: "crispy" },
-        { name: "Double Delight (2 pcs)", price: 700, cat: "crispy" },
-        { name: "Chicken Wings (10 pcs)", price: 1252, cat: "crispy" },
-        { name: "Chicken Wings (5 pcs)", price: 852, cat: "crispy" },
-        { name: "Fish Sandwich", price: 574, cat: "sandwiches" },
-        { name: "Double Fish Sandwich", price: 574, cat: "sandwiches" },
-        { name: "Tuna Sandwich", price: 558, cat: "sandwiches" },
-        { name: "Tofu Sandwich", price: 391, cat: "sandwiches" },
-        { name: "Vegetable Sandwich", price: 322, cat: "sandwiches" },
-        { name: "Soft Drink (500ml)", price: 65, cat: "drinks" },
-        { name: "Soft Drink (300ml)", price: 78, cat: "drinks" },
-        { name: "Hot Beverages", price: 52, cat: "drinks" },
-        { name: "Lemon Juice", price: 78, cat: "drinks" },
-        { name: "Pineapple Juice", price: 270, cat: "drinks" },
-        { name: "Orange Juice", price: 348, cat: "drinks" },
-        { name: "French Fries", price: 70, cat: "drinks" },
-        { name: "Rice", price: 52, cat: "drinks" },
-        { name: "Sauce", price: 70, cat: "drinks" }
+        // Shawarma & Chicken
+        { name: "Normal Shawarma", price: 695, cat: "shawarma", img: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80", desc: "Classic chicken shawarma wrapped in fresh pita bread with garlic sauce, pickles, and vegetables.", ingredients: "Grilled chicken, pita bread, garlic sauce, pickles, lettuce, tomatoes" },
+        { name: "Special Darna Shawarma", price: 782, cat: "shawarma", img: "https://images.unsplash.com/photo-1626700054175-7b2efef4d8b8?w=400&q=80", desc: "Our signature shawarma with extra meat, special spicy sauce, and toasted pita.", ingredients: "Double chicken, special Darna sauce, toasted pita, pickles, jalapenos, garlic paste" },
+        { name: "Full Roasted Chicken", price: 2213, cat: "shawarma", img: "https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80", desc: "Whole chicken slow-roasted with our secret family spice blend. Served with rice.", ingredients: "Whole chicken, secret spice blend, served with seasoned rice and sauce" },
+        { name: "Half Roasted Chicken", price: 1196, cat: "shawarma", img: "https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80", desc: "Half chicken roasted to perfection with aromatic spices.", ingredients: "Half chicken, signature rub, served with rice" },
+        { name: "Full Grilled Chicken", price: 1848, cat: "shawarma", img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&q=80", desc: "Charcoal-grilled whole chicken, smoky and juicy.", ingredients: "Whole chicken, charcoal grilled, herb marinade, served with vegetables" },
+        { name: "Half Grilled Chicken", price: 948, cat: "shawarma", img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&q=80", desc: "Half chicken grilled over open flame.", ingredients: "Half chicken, smoky grill flavor, served with sauce" },
+        { name: "Chicken Kabsa", price: 752, cat: "shawarma", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80", desc: "Traditional spiced chicken and rice dish.", ingredients: "Chicken, basmati rice, kabsa spices, raisins, almonds" },
+        { name: "Chicken Kabsa (Large)", price: 1056, cat: "shawarma", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80", desc: "Large portion of our famous kabsa.", ingredients: "Extra chicken, basmati rice, kabsa spices, raisins, almonds" },
+        // Burgers
+        { name: "Special Burger 1", price: 591, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Juicy beef patty with cheese, lettuce, tomato, and special sauce.", ingredients: "Beef patty, cheddar cheese, lettuce, tomato, onion, special burger sauce, brioche bun" },
+        { name: "Special Burger 2", price: 835, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Double patty special burger with extra cheese.", ingredients: "Double beef patty, double cheese, lettuce, tomato, onion, special sauce" },
+        { name: "Special Burger 4", price: 904, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Quadruple patty burger for extreme hunger.", ingredients: "Four beef patties, four cheese slices, lettuce, tomato, special sauce" },
+        { name: "Cheese Burger", price: 500, cat: "burgers", img: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80", desc: "Classic cheeseburger with melted cheddar.", ingredients: "Beef patty, cheddar cheese, pickles, ketchup, mustard, sesame bun" },
+        { name: "Beef Burger", price: 448, cat: "burgers", img: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80", desc: "Simple and delicious beef burger.", ingredients: "Beef patty, lettuce, tomato, onion, burger sauce" },
+        { name: "Chicken Sandwich", price: 800, cat: "burgers", img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=80", desc: "Grilled chicken fillet sandwich with fresh veggies.", ingredients: "Grilled chicken breast, lettuce, tomato, mayo, toasted bun" },
+        { name: "Egg Sandwich", price: 322, cat: "burgers", img: "https://images.unsplash.com/photo-1525351486363-ef6f3f8c3d9b?w=400&q=80", desc: "Fried egg sandwich with cheese.", ingredients: "Fried egg, cheese, lettuce, mayo, toasted bread" },
+        // Crispy & Buckets
+        { name: "Family Bucket (8 pcs)", price: 1900, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "8 pieces of our famous crispy fried chicken.", ingredients: "8 pieces of crispy chicken (legs, thighs, breasts, wings)" },
+        { name: "Mega Five (5 pcs)", price: 1256, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "5 pieces of crispy fried chicken.", ingredients: "5 pieces of crispy chicken, choice of pieces" },
+        { name: "Golden Four (4 pcs)", price: 1013, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "4 pieces of golden crispy chicken.", ingredients: "4 pieces of signature crispy chicken" },
+        { name: "Triple Crunch (3 pcs)", price: 856, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "3 pieces of crunchy fried chicken.", ingredients: "3 pieces of crispy chicken" },
+        { name: "Double Delight (2 pcs)", price: 700, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "2 pieces of crispy chicken.", ingredients: "2 pieces of crispy chicken" },
+        { name: "Chicken Wings (10 pcs)", price: 1252, cat: "crispy", img: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&q=80", desc: "10 crispy chicken wings, choose your sauce.", ingredients: "10 chicken wings, choice of mild, spicy, or BBQ sauce" },
+        { name: "Chicken Wings (5 pcs)", price: 852, cat: "crispy", img: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&q=80", desc: "5 crispy chicken wings.", ingredients: "5 chicken wings, choice of sauce" },
+        // Sandwiches
+        { name: "Fish Sandwich", price: 574, cat: "sandwiches", img: "https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=400&q=80", desc: "Crispy fish fillet with tartar sauce.", ingredients: "Breaded fish fillet, lettuce, tartar sauce, soft bun" },
+        { name: "Double Fish Sandwich", price: 574, cat: "sandwiches", img: "https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=400&q=80", desc: "Double fish fillet sandwich.", ingredients: "Two breaded fish fillets, lettuce, tartar sauce" },
+        { name: "Tuna Sandwich", price: 558, cat: "sandwiches", img: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=400&q=80", desc: "Premium tuna salad sandwich.", ingredients: "Tuna salad, lettuce, tomato, whole wheat bread" },
+        { name: "Tofu Sandwich", price: 391, cat: "sandwiches", img: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&q=80", desc: "Vegan tofu sandwich with fresh vegetables.", ingredients: "Grilled tofu, lettuce, tomato, cucumber, vegan sauce" },
+        { name: "Vegetable Sandwich", price: 322, cat: "sandwiches", img: "https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?w=400&q=80", desc: "Fresh vegetable sandwich.", ingredients: "Lettuce, tomato, cucumber, bell peppers, hummus" },
+        // Drinks & Sides
+        { name: "Soft Drink (500ml)", price: 65, cat: "drinks", img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=400&q=80", desc: "Ice-cold soft drink.", ingredients: "Coca-Cola, Sprite, Fanta, or Pepsi" },
+        { name: "Soft Drink (300ml)", price: 78, cat: "drinks", img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=400&q=80", desc: "Can of soft drink.", ingredients: "Choice of Coca-Cola, Sprite, or Fanta" },
+        { name: "Hot Beverages", price: 52, cat: "drinks", img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&q=80", desc: "Fresh brewed coffee or tea.", ingredients: "Ethiopian coffee or black tea" },
+        { name: "Lemon Juice", price: 78, cat: "drinks", img: "https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=400&q=80", desc: "Freshly squeezed lemonade.", ingredients: "Fresh lemons, sugar, water, ice" },
+        { name: "Pineapple Juice", price: 270, cat: "drinks", img: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400&q=80", desc: "100% pure pineapple juice.", ingredients: "Fresh pineapple juice" },
+        { name: "Orange Juice", price: 348, cat: "drinks", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&q=80", desc: "Freshly squeezed orange juice.", ingredients: "Fresh oranges" },
+        { name: "French Fries", price: 70, cat: "drinks", img: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=400&q=80", desc: "Crispy golden fries.", ingredients: "Potatoes, salt, vegetable oil" },
+        { name: "Rice", price: 52, cat: "drinks", img: "https://images.unsplash.com/photo-1516685012163-197e6b4fcf45?w=400&q=80", desc: "Steamed basmati rice.", ingredients: "Basmati rice, salt, butter" },
+        { name: "Sauce", price: 70, cat: "drinks", img: "https://images.unsplash.com/photo-1590779030300-3c789b51ecf8?w=400&q=80", desc: "Choice of dipping sauce.", ingredients: "Garlic sauce, spicy sauce, or BBQ sauce" },
+        { name: "Ketchup", price: 70, cat: "drinks", img: "https://images.unsplash.com/photo-1585561967045-40b8bf33db69?w=400&q=80", desc: "Tomato ketchup packet.", ingredients: "Tomato ketchup" }
     ];
     
     function renderMenu(cat) {
         const filtered = cat === 'all' ? menuItems : menuItems.filter(i => i.cat === cat);
         const grid = document.getElementById('menuGrid');
         grid.innerHTML = filtered.map(item => `
-            <div class="menu-item" onclick="orderItem('${item.name}', ${item.price})">
-                <span class="menu-item__name">${item.name}</span>
-                <span class="menu-item__price">${item.price} ETB</span>
+            <div class="menu-item" onclick="openModal('${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.img}', '${item.desc.replace(/'/g, "\\'")}', '${item.ingredients.replace(/'/g, "\\'")}')">
+                <img class="menu-item-img" src="${item.img}" alt="${item.name}">
+                <div class="menu-item-content">
+                    <span class="menu-item__name">${item.name}</span>
+                    <span class="menu-item__price">${item.price} ETB</span>
+                </div>
             </div>
         `).join('');
-    }
-    
-    function orderItem(name, price) {
-        alert(`🍗 ${name} - ${price} ETB\n\nCall 098 to place your order!\nDelivery available within 45 minutes.`);
     }
     
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -328,6 +310,16 @@
         });
     });
     renderMenu('all');
+    
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileNavOverlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    function openMobileMenu() { mobileNav.classList.add('open'); mobileOverlay.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileNav.classList.remove('open'); mobileOverlay.style.display = 'none'; document.body.style.overflow = ''; }
+    mobileMenuBtn?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
 </script>
 </body>
 </html>
