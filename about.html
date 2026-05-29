@@ -3,77 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moojito · Our Story | Darna Chicken</title>
+    <title>DARNA CHICKEN · About Us | 4 Kilo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; }
-        :root { --gold: #e09d32; --red: #b83b2e; }
-        .top-bar { background: var(--red); text-align: center; padding: 10px; font-size: 0.8rem; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; overflow-x: hidden; }
+        :root { --gold: #e09d32; --gold-dark: #c47d2a; --red: #b83b2e; --red-dark: #922b20; }
+        
+        .top-bar { background: var(--red); text-align: center; padding: 10px; font-size: 0.8rem; font-weight: 600; }
+        .top-bar i { margin: 0 6px; }
+        
         .header { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
-        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .logo__icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #0a0a0a; }
-        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: white; }
+        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: white; }
         .logo__text span { color: var(--gold); }
+        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 1px; }
+        
         .nav__list { display: flex; gap: 32px; list-style: none; }
-        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; }
+        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; cursor: pointer; }
         .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
-        .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; }
+        
+        .mobile-menu-btn { background: none; border: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; display: none; }
+        
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 200; display: none; }
+        .mobile-nav { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #0f0f0f; z-index: 201; transition: left 0.3s ease; padding: 30px 20px; border-right: 2px solid var(--gold); }
+        .mobile-nav.open { left: 0; }
+        .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        .close-menu { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .mobile-nav-list { list-style: none; }
+        .mobile-nav-list li { margin-bottom: 25px; }
+        .mobile-nav-list a { color: #ddd; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: block; padding: 8px 0; transition: 0.2s; cursor: pointer; }
+        .mobile-nav-list a:hover { color: var(--gold); padding-left: 10px; }
+        .mobile-call { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; }
+        .mobile-call a { background: var(--gold); color: #0a0a0a; padding: 12px; border-radius: 40px; text-decoration: none; display: block; text-align: center; font-weight: 700; }
+        
+        .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-call:hover { background: var(--gold-dark); transform: scale(1.02); }
+        
         .page-hero { background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80') center/cover no-repeat; text-align: center; padding: 60px 24px; }
         .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; }
         .page-hero h1 span { color: var(--gold); }
+        .page-hero p { color: #ddd; margin-top: 10px; }
+        
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin: 60px 0; align-items: center; }
         .about-text p { margin-bottom: 20px; line-height: 1.6; color: #bbb; }
         .about-text i { color: var(--gold); margin-right: 10px; }
         .about-image img { width: 100%; border-radius: 28px; }
+        
         .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 60px 0; text-align: center; }
-        .value-card { background: #141414; padding: 30px; border-radius: 24px; border: 1px solid #2a2a2a; }
+        .value-card { background: #141414; padding: 30px; border-radius: 24px; border: 1px solid #2a2a2a; transition: 0.2s; }
+        .value-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .value-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 16px; }
+        .value-card h3 { margin-bottom: 10px; }
+        .value-card p { color: #aaa; font-size: 0.9rem; }
+        
         .footer { background: #030303; padding: 50px 20px 30px; margin-top: 40px; }
-        .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer__col h3, .footer__col h4 { margin-bottom: 20px; }
         .footer__col h3 span, .footer__col h4 { color: var(--gold); }
+        .footer__col p { color: #888; line-height: 1.6; }
         .footer__col ul { list-style: none; }
-        .footer__col ul li a { color: #888; text-decoration: none; }
-        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; }
-        .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; margin-top: 30px; }
-        @media (max-width: 768px) { .nav { display: none; } .about-grid { grid-template-columns: 1fr; } .values-grid { grid-template-columns: 1fr; } }
+        .footer__col ul li { margin-bottom: 10px; }
+        .footer__col ul li a { color: #888; text-decoration: none; cursor: pointer; transition: 0.2s; }
+        .footer__col ul li a:hover { color: var(--gold); }
+        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; cursor: pointer; transition: 0.2s; }
+        .social-links a:hover { background: var(--gold); color: #0a0a0a; transform: scale(1.1); }
+        .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; color: #666; }
+        
+        @media (max-width: 768px) { 
+            .desktop-nav { display: none; } 
+            .mobile-menu-btn { display: block; } 
+            .header__inner { justify-content: space-between; } 
+            .page-hero h1 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-<div class="top-bar"><i class="fas fa-heart"></i> FAMILY-OWNED SINCE 2018 | CALL 098</div>
+<div class="top-bar"><i class="fas fa-map-marker-alt"></i> 4 KILO, ADDIS ABABA | <i class="fas fa-motorcycle"></i> FREE DELIVERY 1,500+ ETB | <i class="fas fa-phone"></i> CALL 098</div>
 
 <header class="header">
     <div class="container header__inner">
-        <div class="logo"><div class="logo__icon">🍗</div><div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div></div>
-        <nav class="nav"><ul class="nav__list"><li><a href="index.html" class="nav__link">Home</a></li><li><a href="menu.html" class="nav__link">Menu</a></li><li><a href="offers.html" class="nav__link">Offers</a></li><li><a href="about.html" class="nav__link active">About</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul></nav>
+        <div class="logo" onclick="navigateTo('index.html')">
+            <div class="logo__icon">🍗</div>
+            <div>
+                <div class="logo__text">DARNA <span>CHICKEN</span></div>
+                <div class="logo__sub">4 KILO • FAMILY RECIPE</div>
+            </div>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="nav__list">
+                <li><a onclick="navigateTo('index.html')" class="nav__link">Home</a></li>
+                <li><a onclick="navigateTo('menu.html')" class="nav__link">Menu & Offers</a></li>
+                <li><a onclick="navigateTo('about.html')" class="nav__link active">About</a></li>
+                <li><a onclick="navigateTo('contact.html')" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
         <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> CALL 098</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     </div>
 </header>
 
-<section class="page-hero"><div class="container"><h1>Our <span>Story</span></h1><p>Feel at home. Eat like a family.</p></div></section>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header"><h3>DARNA CHICKEN</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <ul class="mobile-nav-list">
+        <li><a onclick="navigateTo('index.html')">🏠 Home</a></li>
+        <li><a onclick="navigateTo('menu.html')">🍔 Menu & Offers</a></li>
+        <li><a onclick="navigateTo('about.html')">📖 About</a></li>
+        <li><a onclick="navigateTo('contact.html')">📞 Contact</a></li>
+    </ul>
+    <div class="mobile-call"><a href="tel:+251983333333"><i class="fas fa-phone"></i> Call 098</a></div>
+</div>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Our <span>Story</span></h1>
+        <p>Feel at home. Eat like a family. — Since 2018 at 4 Kilo</p>
+    </div>
+</section>
 
 <section class="container">
     <div class="about-grid">
         <div class="about-text">
             <h2 style="margin-bottom: 20px;">The Darna Chicken Legacy</h2>
-            <p>Moojito Darna Chicken started with a simple belief: <strong>great food brings families together</strong>. Our secret spice blend has been passed down for generations, perfected in the heart of Addis Ababa.</p>
+            <p>DARNA CHICKEN started with a simple belief: <strong>great food brings families together</strong>. Our secret spice blend has been passed down for generations, perfected in the heart of Addis Ababa at our <strong>4 Kilo location</strong>.</p>
             <p>Every dish is prepared fresh daily, using only premium ingredients and traditional cooking methods. From our signature shawarma to slow-roasted chicken, we pour love into every bite.</p>
-            <p><i class="fas fa-quote-left"></i> "Feel at home. Eat like a family." — that's not just a slogan, it's our promise.</p>
+            <p><i class="fas fa-quote-left"></i> "Feel at home. Eat like a family." — that's not just a slogan, it's our promise to every customer who walks through our doors at 4 Kilo.</p>
+            <p style="margin-top: 20px;"><i class="fas fa-map-marker-alt"></i> Visit us at <strong>4 Kilo, Addis Ababa</strong> — near the roundabout.</p>
         </div>
-        <div class="about-image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Kitchen"></div>
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="DARNA CHICKEN Kitchen"></div>
     </div>
+    
     <div class="values-grid">
         <div class="value-card"><i class="fas fa-leaf"></i><h3>Fresh Ingredients</h3><p>Sourced daily from local markets</p></div>
         <div class="value-card"><i class="fas fa-hand-sparkles"></i><h3>Halal Certified</h3><p>Prepared with respect & care</p></div>
-        <div class="value-card"><i class="fas fa-clock"></i><h3>Quick Service</h3><p>Hot food, delivered fast</p></div>
+        <div class="value-card"><i class="fas fa-clock"></i><h3>Quick Service</h3><p>Hot food, delivered fast in Addis</p></div>
     </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.</p></div><div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Offers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098</p></div><div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. Prices exclude 15% service + tax</p></div></div></footer>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h3>DARNA <span>CHICKEN</span></h3>
+                <p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p>
+                <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</p>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a onclick="navigateTo('index.html')">Home</a></li>
+                    <li><a onclick="navigateTo('menu.html')">Menu & Offers</a></li>
+                    <li><a onclick="navigateTo('about.html')">About</a></li>
+                    <li><a onclick="navigateTo('contact.html')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p>
+                <p><i class="fas fa-envelope"></i> hello@darnachicken.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="footer__col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a><i class="fab fa-facebook-f"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-telegram"></i></a>
+                    <a><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2026 DARNA CHICKEN · 4 Kilo. All rights reserved. | Prices exclude 15% service + tax</p>
+        </div>
+    </div>
+</footer>
 
+<script>
+    function navigateTo(page) { window.location.href = page; }
+    
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileNavOverlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    function openMobileMenu() { mobileNav.classList.add('open'); mobileOverlay.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileNav.classList.remove('open'); mobileOverlay.style.display = 'none'; document.body.style.overflow = ''; }
+    mobileMenuBtn?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+</script>
 </body>
 </html>
