@@ -3,127 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moojito · Special Offers | Darna Chicken</title>
+    <title>Moojito · Full Menu | Darna Chicken</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; }
+        :root { --gold: #e09d32; --gold-dark: #c47d2a; --red: #b83b2e; }
+        
+        .top-bar { background: var(--red); text-align: center; padding: 10px; font-size: 0.8rem; font-weight: 600; }
+        .header { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo__icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #0a0a0a; }
+        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: white; }
+        .logo__text span { color: var(--gold); }
+        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
+        .nav__list { display: flex; gap: 32px; list-style: none; }
+        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; }
+        .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
+        .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        
+        .page-hero { background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80') center/cover no-repeat; text-align: center; padding: 60px 24px; }
+        .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: white; }
+        .page-hero h1 span { color: var(--gold); }
+        .page-hero p { color: #ddd; margin-top: 10px; }
+        
+        .menu-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 40px 0 30px; }
+        .filter-btn { background: #1a1a1a; border: 1px solid #333; color: #ddd; padding: 10px 24px; border-radius: 40px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--gold); color: #0a0a0a; border-color: var(--gold); }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 60px; }
+        .menu-item { background: #141414; border-radius: 20px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #2a2a2a; transition: 0.2s; }
+        .menu-item:hover { border-color: var(--gold); transform: translateX(4px); }
+        .menu-item__name { font-weight: 600; }
+        .menu-item__price { font-weight: 800; color: var(--gold); font-size: 1.1rem; }
+        
+        .footer { background: #030303; padding: 50px 20px 30px; margin-top: 40px; }
+        .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer__col h3, .footer__col h4 { margin-bottom: 20px; }
+        .footer__col h3 span, .footer__col h4 { color: var(--gold); }
+        .footer__col p { color: #888; line-height: 1.6; }
+        .footer__col ul { list-style: none; }
+        .footer__col ul li { margin-bottom: 10px; }
+        .footer__col ul li a { color: #888; text-decoration: none; }
+        .footer__col ul li a:hover { color: var(--gold); }
+        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; }
+        .social-links a:hover { background: var(--gold); color: #0a0a0a; }
+        .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; color: #666; }
+        
+        @media (max-width: 768px) { .nav { display: none; } .header__inner { flex-direction: column; } .page-hero h1 { font-size: 2rem; } }
+    </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <i class="fas fa-tag"></i> LIMITED TIME OFFERS! | CALL 098
+<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | CALL 098</div>
+
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo"><div class="logo__icon">🍗</div><div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div></div>
+        <nav class="nav"><ul class="nav__list"><li><a href="index.html" class="nav__link">Home</a></li><li><a href="menu.html" class="nav__link active">Menu</a></li><li><a href="offers.html" class="nav__link">Offers</a></li><li><a href="about.html" class="nav__link">About</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul></nav>
+        <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> CALL 098</a>
     </div>
+</header>
 
-    <header class="header">
-        <div class="container header__inner">
-            <div class="logo">
-                <div class="logo__icon">🍗</div>
-                <div>
-                    <div class="logo__text">MOOJITO<span>®</span></div>
-                    <div class="logo__sub">DARNA CHICKEN</div>
-                </div>
-            </div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link">Home</a></li>
-                    <li><a href="menu.html" class="nav__link">Menu</a></li>
-                    <li><a href="offers.html" class="nav__link active">Offers</a></li>
-                    <li><a href="about.html" class="nav__link">About</a></li>
-                    <li><a href="contact.html" class="nav__link">Contact</a></li>
-                    <li><a href="admin.html" class="nav__link"><i class="fas fa-user-shield"></i> Admin</a></li>
-                </ul>
-            </nav>
-            <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> 098</a>
-            <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-        </div>
-    </header>
+<section class="page-hero"><div class="container"><h1>Our <span>Menu</span></h1><p>Explore our delicious offerings — crafted with love and secret spices</p></div></section>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Special <span>Offers</span></h1>
-            <p>Don't miss out on these amazing deals!</p>
-        </div>
-    </section>
+<main class="container">
+    <div class="menu-filters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="shawarma">Shawarma & Chicken</button>
+        <button class="filter-btn" data-cat="burgers">Burgers</button>
+        <button class="filter-btn" data-cat="crispy">Crispy & Buckets</button>
+        <button class="filter-btn" data-cat="sandwiches">Sandwiches</button>
+        <button class="filter-btn" data-cat="drinks">Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+</main>
 
-    <section class="section offers-section">
-        <div class="container">
-            <div class="offers-grid">
-                <div class="offer-card">
-                    <div class="offer-badge">-15% OFF</div>
-                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80" alt="Family Combo">
-                    <div class="offer-card__content">
-                        <h3>Family Feast Combo</h3>
-                        <p>Full Roasted Chicken + 4 pcs Wings + Large Rice + 2 Drinks</p>
-                        <div class="offer-price"><span class="old">2,800 ETB</span> 2,380 ETB</div>
-                        <div class="countdown" data-date="2026-06-15">Ends in: --</div>
-                        <a href="tel:+251983333333" class="btn-offer">Order Now</a>
-                    </div>
-                </div>
-                <div class="offer-card">
-                    <div class="offer-badge">BUY 1 GET 1</div>
-                    <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Wings">
-                    <div class="offer-card__content">
-                        <h3>Wings Wednesday</h3>
-                        <p>Buy 10 pcs Wings, Get 5 pcs FREE!</p>
-                        <div class="offer-price"><span class="old">1,252 ETB</span> 1,252 ETB + Free</div>
-                        <div class="countdown" data-date="2026-06-10">Ends in: --</div>
-                        <a href="tel:+251983333333" class="btn-offer">Order Now</a>
-                    </div>
-                </div>
-                <div class="offer-card">
-                    <div class="offer-badge">-20% OFF</div>
-                    <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80" alt="Burger Meal">
-                    <div class="offer-card__content">
-                        <h3>Burger Mania</h3>
-                        <p>Any Special Burger + Fries + Drink</p>
-                        <div class="offer-price"><span class="old">1,050 ETB</span> 840 ETB</div>
-                        <div class="countdown" data-date="2026-06-30">Ends in: --</div>
-                        <a href="tel:+251983333333" class="btn-offer">Order Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div><div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Offers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div><div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div></div></footer>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__col">
-                    <h3>Moojito <span>®</span></h3>
-                    <p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p>
-                </div>
-                <div class="footer__col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="offers.html">Offers</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p>
-                    <p><i class="fas fa-envelope"></i> hello@moojito.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
-                </div>
-                <div class="footer__col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+<script>
+    const menuItems = [
+        { name: "Normal Shawarma", price: 695, cat: "shawarma" },
+        { name: "Special Darna Shawarma", price: 782, cat: "shawarma" },
+        { name: "Full Roasted Chicken", price: 2213, cat: "shawarma" },
+        { name: "Half Roasted Chicken", price: 1196, cat: "shawarma" },
+        { name: "Full Grilled Chicken", price: 1848, cat: "shawarma" },
+        { name: "Half Grilled Chicken", price: 948, cat: "shawarma" },
+        { name: "Special Burger", price: 591, cat: "burgers" },
+        { name: "Cheese Burger", price: 500, cat: "burgers" },
+        { name: "Beef Burger", price: 448, cat: "burgers" },
+        { name: "Chicken Sandwich", price: 800, cat: "burgers" },
+        { name: "Egg Sandwich", price: 322, cat: "burgers" },
+        { name: "Family Bucket (8 pcs)", price: 1900, cat: "crispy" },
+        { name: "Mega Five (5 pcs)", price: 1256, cat: "crispy" },
+        { name: "Golden Four (4 pcs)", price: 1013, cat: "crispy" },
+        { name: "Triple Crunch (3 pcs)", price: 856, cat: "crispy" },
+        { name: "Double Delight (2 pcs)", price: 700, cat: "crispy" },
+        { name: "Chicken Wings (10 pcs)", price: 1252, cat: "crispy" },
+        { name: "Chicken Wings (5 pcs)", price: 852, cat: "crispy" },
+        { name: "Fish Sandwich", price: 574, cat: "sandwiches" },
+        { name: "Tuna Sandwich", price: 558, cat: "sandwiches" },
+        { name: "Tofu Sandwich", price: 391, cat: "sandwiches" },
+        { name: "Vegetable Sandwich", price: 322, cat: "sandwiches" },
+        { name: "Soft Drink (500ml)", price: 65, cat: "drinks" },
+        { name: "Soft Drink (300ml)", price: 78, cat: "drinks" },
+        { name: "Hot Beverages", price: 52, cat: "drinks" },
+        { name: "Lemon Juice", price: 78, cat: "drinks" },
+        { name: "Pineapple Juice", price: 270, cat: "drinks" },
+        { name: "Orange Juice", price: 348, cat: "drinks" }
+    ];
+    
+    function renderMenu(cat) {
+        const filtered = cat === 'all' ? menuItems : menuItems.filter(i => i.cat === cat);
+        const grid = document.getElementById('menuGrid');
+        grid.innerHTML = filtered.map(item => `<div class="menu-item"><span class="menu-item__name">${item.name}</span><span class="menu-item__price">${item.price} ETB</span></div>`).join('');
+    }
+    
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderMenu(btn.dataset.cat);
+        });
+    });
+    renderMenu('all');
+</script>
 </body>
 </html>
