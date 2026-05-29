@@ -3,74 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moojito · Darna Chicken | Feel at Home</title>
+    <title>Moojito · Darna Chicken | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; overflow-x: hidden; }
         :root { --gold: #e09d32; --gold-dark: #c47d2a; --red: #b83b2e; }
         
-        .top-bar { background: var(--red); text-align: center; padding: 10px 16px; font-size: 0.8rem; font-weight: 600; }
-        .top-bar i { margin: 0 6px; }
-        
+        .top-bar { background: var(--red); text-align: center; padding: 10px; font-size: 0.8rem; }
         .header { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
-        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .logo__icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #0a0a0a; }
         .logo__text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: white; }
         .logo__text span { color: var(--gold); }
-        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
-        .nav__list { display: flex; gap: 32px; list-style: none; }
-        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; }
-        .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
-        .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
-        .btn-call:hover { background: var(--gold-dark); transform: scale(1.02); }
+        .logo__sub { font-size: 0.65rem; color: #aaa; }
         
-        .hero { background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1588168333986-507ee49f93ab?w=1600&q=80') center/cover no-repeat; text-align: center; padding: 100px 24px 80px; }
-        .hero__badge { display: inline-block; background: var(--red); color: white; padding: 6px 20px; border-radius: 40px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
-        .hero__title { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: white; line-height: 1.1; }
+        /* Desktop Navigation */
+        .nav__list { display: flex; gap: 32px; list-style: none; }
+        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; cursor: pointer; }
+        .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn { background: none; border: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; display: none; }
+        
+        /* Side Mobile Navigation */
+        .mobile-nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 200; display: none; }
+        .mobile-nav { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #0f0f0f; z-index: 201; transition: left 0.3s ease; padding: 30px 20px; border-right: 2px solid var(--gold); }
+        .mobile-nav.open { left: 0; }
+        .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .close-menu { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .mobile-nav-list { list-style: none; }
+        .mobile-nav-list li { margin-bottom: 25px; }
+        .mobile-nav-list a { color: #ddd; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: block; padding: 8px 0; transition: 0.2s; }
+        .mobile-nav-list a:hover, .mobile-nav-list a.active { color: var(--gold); padding-left: 10px; }
+        .mobile-call { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; }
+        .mobile-call a { background: var(--gold); color: #0a0a0a; padding: 12px; border-radius: 40px; text-decoration: none; display: block; text-align: center; font-weight: 700; }
+        
+        .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; }
+        .hero { background: linear-gradient(0deg, rgba(0,0,0,0.75), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1588168333986-507ee49f93ab?w=1600&q=80') center/cover; text-align: center; padding: 100px 24px 80px; }
+        .hero__badge { background: var(--red); display: inline-block; padding: 6px 20px; border-radius: 40px; font-size: 0.8rem; margin-bottom: 20px; }
+        .hero__title { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: white; }
         .hero__title span { color: var(--gold); }
         .hero__sub { font-size: 1.2rem; margin: 20px 0 30px; color: #ddd; }
-        .btn-primary, .btn-secondary { padding: 14px 34px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin: 0 8px; transition: 0.2s; }
+        .btn-primary, .btn-secondary { padding: 14px 34px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin: 0 8px; transition: 0.2s; cursor: pointer; }
         .btn-primary { background: var(--gold); color: #0a0a0a; }
-        .btn-primary:hover { background: var(--gold-dark); transform: scale(1.03); }
         .btn-secondary { background: transparent; border: 2px solid var(--gold); color: white; }
-        .btn-secondary:hover { background: var(--gold); color: #0a0a0a; }
-        
         .section { padding: 70px 0; }
         .section--dark { background: #0f0f0f; }
         .section__header { text-align: center; margin-bottom: 48px; }
-        .section__icon { font-size: 2.5rem; margin-bottom: 10px; }
         .section__title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 800; }
         .section__title span { color: var(--gold); }
         .section__line { width: 70px; height: 3px; background: var(--gold); margin: 14px auto 0; border-radius: 4px; }
-        
         .features__grid, .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .feature-card, .preview-card { background: #141414; border-radius: 24px; padding: 30px 24px; text-align: center; border: 1px solid #2a2a2a; transition: 0.2s; }
+        .feature-card, .preview-card { background: #141414; border-radius: 24px; padding: 30px 24px; text-align: center; border: 1px solid #2a2a2a; transition: 0.2s; cursor: pointer; }
         .feature-card:hover, .preview-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .feature-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 16px; }
         .preview-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; }
-        .preview-card__content { padding: 20px 0 0; }
         .price { font-size: 1.5rem; font-weight: 800; color: var(--gold); display: block; margin: 10px 0; }
-        .btn-sm { background: var(--gold); color: #0a0a0a; padding: 8px 24px; border-radius: 40px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; }
-        
+        .btn-sm { background: var(--gold); color: #0a0a0a; padding: 8px 24px; border-radius: 40px; text-decoration: none; font-weight: 600; display: inline-block; cursor: pointer; }
         .cta-banner { background: var(--red); text-align: center; padding: 60px 20px; }
         .cta-banner h2 { font-size: 2rem; margin-bottom: 10px; }
-        .btn-large { background: var(--gold); color: #0a0a0a; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 16px; }
-        
+        .btn-large { background: var(--gold); color: #0a0a0a; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 16px; cursor: pointer; }
         .footer { background: #030303; padding: 50px 20px 30px; }
         .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .footer__col h3 span, .footer__col h4 { color: var(--gold); }
         .footer__col ul { list-style: none; }
-        .footer__col ul li a { color: #888; text-decoration: none; }
+        .footer__col ul li { margin-bottom: 10px; }
+        .footer__col ul li a { color: #888; text-decoration: none; cursor: pointer; }
         .footer__col ul li a:hover { color: var(--gold); }
-        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; }
-        .social-links a:hover { background: var(--gold); color: #0a0a0a; }
+        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; cursor: pointer; }
         .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; color: #666; }
         
-        @media (max-width: 768px) { .hero__title { font-size: 2.5rem; } .nav { display: none; } .header__inner { flex-direction: column; } }
+        @media (max-width: 768px) { 
+            .desktop-nav { display: none; } 
+            .mobile-menu-btn { display: block; } 
+            .header__inner { justify-content: space-between; }
+            .hero__title { font-size: 2.5rem; }
+            .btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
@@ -79,18 +93,54 @@
 
 <header class="header">
     <div class="container header__inner">
-        <div class="logo"><div class="logo__icon">🍗</div><div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div></div>
-        <nav class="nav"><ul class="nav__list"><li><a href="index.html" class="nav__link active">Home</a></li><li><a href="menu.html" class="nav__link">Menu</a></li><li><a href="offers.html" class="nav__link">Offers</a></li><li><a href="about.html" class="nav__link">About</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul></nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <div class="logo__icon">🍗</div>
+            <div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+            <ul class="nav__list">
+                <li><a onclick="navigateTo('index.html')" class="nav__link active">Home</a></li>
+                <li><a onclick="navigateTo('menu.html')" class="nav__link">Menu</a></li>
+                <li><a onclick="navigateTo('offers.html')" class="nav__link">Offers</a></li>
+                <li><a onclick="navigateTo('about.html')" class="nav__link">About</a></li>
+                <li><a onclick="navigateTo('contact.html')" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+        
         <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> CALL 098</a>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
     </div>
 </header>
+
+<!-- Side Mobile Navigation -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <h3>MOOJITO®</h3>
+        <button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+        <li><a onclick="navigateTo('index.html')">🏠 Home</a></li>
+        <li><a onclick="navigateTo('menu.html')">🍔 Menu</a></li>
+        <li><a onclick="navigateTo('offers.html')">🎁 Offers</a></li>
+        <li><a onclick="navigateTo('about.html')">📖 About</a></li>
+        <li><a onclick="navigateTo('contact.html')">📞 Contact</a></li>
+    </ul>
+    <div class="mobile-call">
+        <a href="tel:+251983333333"><i class="fas fa-phone"></i> Call 098</a>
+    </div>
+</div>
 
 <section class="hero">
     <div class="hero__content">
         <div class="hero__badge">🔥 FAMILY RECIPE SINCE 2018</div>
         <h1 class="hero__title">Feel at Home.<br><span>Eat Like a Family.</span></h1>
         <p class="hero__sub">Authentic Darna Chicken • Flame-Grilled • Crispy & Juicy</p>
-        <div><a href="menu.html" class="btn-primary"><i class="fas fa-utensils"></i> View Full Menu</a><a href="tel:+251983333333" class="btn-secondary"><i class="fas fa-phone"></i> Call to Order</a></div>
+        <div><a onclick="navigateTo('menu.html')" class="btn-primary"><i class="fas fa-utensils"></i> View Full Menu</a><a href="tel:+251983333333" class="btn-secondary"><i class="fas fa-phone"></i> Call to Order</a></div>
     </div>
 </section>
 
@@ -99,12 +149,49 @@
 </section>
 
 <section class="section section--dark">
-    <div class="container"><div class="section__header"><div class="section__icon">🔥</div><h2 class="section__title">Most <span>Popular</span></h2><div class="section__line"></div></div><div class="preview-grid"><div class="preview-card"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80" alt="Shawarma"><div class="preview-card__content"><h3>Special Darna Shawarma</h3><span class="price">782 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div><div class="preview-card"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80" alt="Bucket"><div class="preview-card__content"><h3>Family Bucket (8 pcs)</h3><span class="price">1,900 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div><div class="preview-card"><img src="https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80" alt="Roasted"><div class="preview-card__content"><h3>Full Roasted Chicken</h3><span class="price">2,213 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div></div></div>
+    <div class="container"><div class="section__header"><div class="section__icon">🔥</div><h2 class="section__title">Most <span>Popular</span></h2><div class="section__line"></div></div><div class="preview-grid"><div class="preview-card" onclick="navigateTo('menu.html')"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80" alt="Shawarma"><div class="preview-card__content"><h3>Special Darna Shawarma</h3><span class="price">782 ETB</span><a class="btn-sm">Order Now</a></div></div><div class="preview-card" onclick="navigateTo('menu.html')"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80" alt="Bucket"><div class="preview-card__content"><h3>Family Bucket (8 pcs)</h3><span class="price">1,900 ETB</span><a class="btn-sm">Order Now</a></div></div><div class="preview-card" onclick="navigateTo('menu.html')"><img src="https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80" alt="Roasted"><div class="preview-card__content"><h3>Full Roasted Chicken</h3><span class="price">2,213 ETB</span><a class="btn-sm">Order Now</a></div></div></div></div>
 </section>
 
 <div class="cta-banner"><div class="container"><h2>Hungry? Let's satisfy that craving!</h2><p>Order online or give us a call — we deliver happiness</p><a href="tel:+251983333333" class="btn-large"><i class="fas fa-phone"></i> CALL 098</a></div></div>
 
-<footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div><div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Offers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div><div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div></div></footer>
+<footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div><div class="footer__col"><h4>Quick Links</h4><ul><li><a onclick="navigateTo('index.html')">Home</a></li><li><a onclick="navigateTo('menu.html')">Menu</a></li><li><a onclick="navigateTo('offers.html')">Offers</a></li><li><a onclick="navigateTo('about.html')">About</a></li><li><a onclick="navigateTo('contact.html')">Contact</a></li></ul></div><div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div><div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a><i class="fab fa-facebook-f"></i></a><a><i class="fab fa-instagram"></i></a><a><i class="fab fa-telegram"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div></div></footer>
 
+<script>
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+    
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileNavOverlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    
+    function openMobileMenu() {
+        mobileNav.classList.add('open');
+        mobileOverlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileMenu() {
+        mobileNav.classList.remove('open');
+        mobileOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    // Highlight active page in navigation
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav__link, .mobile-nav-list a').forEach(link => {
+        const href = link.getAttribute('onclick');
+        if (href && href.includes(currentPage.replace('.html', ''))) {
+            link.classList.add('active');
+        }
+    });
+</script>
 </body>
 </html>
