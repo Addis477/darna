@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moojito Darna Chicken - Feel at home. Eat like a family. Premium chicken, shawarma, and burgers in Addis Ababa.">
-    <title>Moojito · Darna Chicken | Home</title>
+    <title>Moojito · Darna Chicken | Feel at Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; }
-        :root { --gold: #e09d32; --gold-dark: #c47d2a; --red: #b83b2e; --red-dark: #922b20; }
+        :root { --gold: #e09d32; --gold-dark: #c47d2a; --red: #b83b2e; }
         
         .top-bar { background: var(--red); text-align: center; padding: 10px 16px; font-size: 0.8rem; font-weight: 600; }
         .top-bar i { margin: 0 6px; }
@@ -24,8 +23,8 @@
         .logo__text span { color: var(--gold); }
         .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
         .nav__list { display: flex; gap: 32px; list-style: none; }
-        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; padding: 8px 0; }
-        .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+        .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; }
+        .nav__link:hover, .nav__link.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
         .btn-call { background: var(--gold); color: #0a0a0a; padding: 10px 24px; border-radius: 40px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
         .btn-call:hover { background: var(--gold-dark); transform: scale(1.02); }
         
@@ -48,70 +47,40 @@
         .section__title span { color: var(--gold); }
         .section__line { width: 70px; height: 3px; background: var(--gold); margin: 14px auto 0; border-radius: 4px; }
         
-        .features__grid, .menu-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .features__grid, .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .feature-card, .preview-card { background: #141414; border-radius: 24px; padding: 30px 24px; text-align: center; border: 1px solid #2a2a2a; transition: 0.2s; }
         .feature-card:hover, .preview-card:hover { transform: translateY(-5px); border-color: var(--gold); }
         .feature-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 16px; }
-        .feature-card h3 { margin-bottom: 10px; }
         .preview-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; }
         .preview-card__content { padding: 20px 0 0; }
         .price { font-size: 1.5rem; font-weight: 800; color: var(--gold); display: block; margin: 10px 0; }
         .btn-sm { background: var(--gold); color: #0a0a0a; padding: 8px 24px; border-radius: 40px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; }
-        .btn-sm:hover { background: var(--gold-dark); transform: scale(1.02); }
         
         .cta-banner { background: var(--red); text-align: center; padding: 60px 20px; }
         .cta-banner h2 { font-size: 2rem; margin-bottom: 10px; }
-        .cta-banner p { margin-bottom: 20px; }
-        .btn-large { background: var(--gold); color: #0a0a0a; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
-        .btn-large:hover { background: var(--gold-dark); transform: scale(1.03); }
+        .btn-large { background: var(--gold); color: #0a0a0a; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 16px; }
         
         .footer { background: #030303; padding: 50px 20px 30px; }
         .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer__col h3, .footer__col h4 { margin-bottom: 20px; }
         .footer__col h3 span, .footer__col h4 { color: var(--gold); }
-        .footer__col p { color: #888; line-height: 1.6; margin-bottom: 10px; }
         .footer__col ul { list-style: none; }
-        .footer__col ul li { margin-bottom: 10px; }
-        .footer__col ul li a { color: #888; text-decoration: none; transition: 0.2s; }
+        .footer__col ul li a { color: #888; text-decoration: none; }
         .footer__col ul li a:hover { color: var(--gold); }
-        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; transition: 0.2s; }
-        .social-links a:hover { background: var(--gold); color: #0a0a0a; transform: scale(1.1); }
+        .social-links a { display: inline-block; color: white; background: #222; width: 38px; height: 38px; border-radius: 50%; text-align: center; line-height: 38px; margin-right: 10px; }
+        .social-links a:hover { background: var(--gold); color: #0a0a0a; }
         .footer__bottom { text-align: center; padding-top: 30px; border-top: 1px solid #222; font-size: 0.75rem; color: #666; }
         
-        @media (max-width: 768px) { 
-            .hero__title { font-size: 2.5rem; } 
-            .nav { display: none; } 
-            .header__inner { flex-direction: column; }
-            .btn-primary, .btn-secondary { margin: 5px; }
-        }
+        @media (max-width: 768px) { .hero__title { font-size: 2.5rem; } .nav { display: none; } .header__inner { flex-direction: column; } }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
-    <i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB 
-    <i class="fas fa-separator"></i> 
-    <i class="fas fa-clock"></i> OPEN 10AM - 11PM DAILY
-</div>
+<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | <i class="fas fa-phone"></i> CALL 098</div>
 
 <header class="header">
     <div class="container header__inner">
-        <div class="logo">
-            <div class="logo__icon">🍗</div>
-            <div>
-                <div class="logo__text">MOOJITO<span>®</span></div>
-                <div class="logo__sub">DARNA CHICKEN</div>
-            </div>
-        </div>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li><a href="index.html" class="nav__link active">Home</a></li>
-                <li><a href="menu.html" class="nav__link">Menu</a></li>
-                <li><a href="offers.html" class="nav__link">Offers</a></li>
-                <li><a href="about.html" class="nav__link">About</a></li>
-                <li><a href="contact.html" class="nav__link">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo"><div class="logo__icon">🍗</div><div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div></div>
+        <nav class="nav"><ul class="nav__list"><li><a href="index.html" class="nav__link active">Home</a></li><li><a href="menu.html" class="nav__link">Menu</a></li><li><a href="offers.html" class="nav__link">Offers</a></li><li><a href="about.html" class="nav__link">About</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul></nav>
         <a href="tel:+251983333333" class="btn-call"><i class="fas fa-phone-alt"></i> CALL 098</a>
     </div>
 </header>
@@ -121,109 +90,21 @@
         <div class="hero__badge">🔥 FAMILY RECIPE SINCE 2018</div>
         <h1 class="hero__title">Feel at Home.<br><span>Eat Like a Family.</span></h1>
         <p class="hero__sub">Authentic Darna Chicken • Flame-Grilled • Crispy & Juicy</p>
-        <div>
-            <a href="menu.html" class="btn-primary"><i class="fas fa-utensils"></i> View Full Menu</a>
-            <a href="tel:+251983333333" class="btn-secondary"><i class="fas fa-phone"></i> Call to Order</a>
-        </div>
+        <div><a href="menu.html" class="btn-primary"><i class="fas fa-utensils"></i> View Full Menu</a><a href="tel:+251983333333" class="btn-secondary"><i class="fas fa-phone"></i> Call to Order</a></div>
     </div>
 </section>
 
 <section class="section">
-    <div class="container">
-        <div class="features__grid">
-            <div class="feature-card"><i class="fas fa-drumstick-bite"></i><h3>Premium Quality</h3><p>100% fresh chicken, halal certified, never frozen.</p></div>
-            <div class="feature-card"><i class="fas fa-motorcycle"></i><h3>Fast Delivery</h3><p>Hot & fresh at your doorstep within 45 minutes.</p></div>
-            <div class="feature-card"><i class="fas fa-heart"></i><h3>Family Recipe</h3><p>Secret spices passed down for generations.</p></div>
-        </div>
-    </div>
+    <div class="container"><div class="features__grid"><div class="feature-card"><i class="fas fa-drumstick-bite"></i><h3>Premium Quality</h3><p>100% fresh chicken, halal certified</p></div><div class="feature-card"><i class="fas fa-motorcycle"></i><h3>Fast Delivery</h3><p>Hot & fresh within 45 minutes</p></div><div class="feature-card"><i class="fas fa-heart"></i><h3>Family Recipe</h3><p>Secret spices passed down for generations</p></div></div></div>
 </section>
 
 <section class="section section--dark">
-    <div class="container">
-        <div class="section__header">
-            <div class="section__icon">🔥</div>
-            <h2 class="section__title">Most <span>Popular</span></h2>
-            <div class="section__line"></div>
-            <p style="margin-top: 12px; color: #aaa;">Customer favorites you'll love</p>
-        </div>
-        <div class="menu-preview">
-            <div class="preview-card">
-                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80" alt="Special Shawarma">
-                <div class="preview-card__content">
-                    <h3>Special Darna Shawarma</h3>
-                    <p style="color:#aaa; margin:8px 0;">Tender chicken, garlic sauce, pickles</p>
-                    <span class="price">782 ETB</span>
-                    <a href="menu.html" class="btn-sm">Order Now</a>
-                </div>
-            </div>
-            <div class="preview-card">
-                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80" alt="Family Bucket">
-                <div class="preview-card__content">
-                    <h3>Family Bucket (8 pcs)</h3>
-                    <p style="color:#aaa; margin:8px 0;">Crispy chicken + fries + sauce</p>
-                    <span class="price">1,900 ETB</span>
-                    <a href="menu.html" class="btn-sm">Order Now</a>
-                </div>
-            </div>
-            <div class="preview-card">
-                <img src="https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80" alt="Roasted Chicken">
-                <div class="preview-card__content">
-                    <h3>Full Roasted Chicken</h3>
-                    <p style="color:#aaa; margin:8px 0;">Slow-roasted with special herbs</p>
-                    <span class="price">2,213 ETB</span>
-                    <a href="menu.html" class="btn-sm">Order Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container"><div class="section__header"><div class="section__icon">🔥</div><h2 class="section__title">Most <span>Popular</span></h2><div class="section__line"></div></div><div class="preview-grid"><div class="preview-card"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80" alt="Shawarma"><div class="preview-card__content"><h3>Special Darna Shawarma</h3><span class="price">782 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div><div class="preview-card"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80" alt="Bucket"><div class="preview-card__content"><h3>Family Bucket (8 pcs)</h3><span class="price">1,900 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div><div class="preview-card"><img src="https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80" alt="Roasted"><div class="preview-card__content"><h3>Full Roasted Chicken</h3><span class="price">2,213 ETB</span><a href="menu.html" class="btn-sm">Order Now</a></div></div></div></div>
 </section>
 
-<div class="cta-banner">
-    <div class="container">
-        <h2>Hungry? Let's satisfy that craving!</h2>
-        <p>Order online or give us a call — we deliver happiness to your doorstep</p>
-        <a href="tel:+251983333333" class="btn-large"><i class="fas fa-phone"></i> CALL 098</a>
-    </div>
-</div>
+<div class="cta-banner"><div class="container"><h2>Hungry? Let's satisfy that craving!</h2><p>Order online or give us a call — we deliver happiness</p><a href="tel:+251983333333" class="btn-large"><i class="fas fa-phone"></i> CALL 098</a></div></div>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer__grid">
-            <div class="footer__col">
-                <h3>Moojito <span>®</span></h3>
-                <p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p>
-            </div>
-            <div class="footer__col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="offers.html">Offers</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p>
-                <p><i class="fas fa-envelope"></i> hello@moojito.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
-            </div>
-            <div class="footer__col">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p>
-        </div>
-    </div>
-</footer>
+<footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div><div class="footer__col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Offers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div><div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div></div><div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div></div></footer>
 
 </body>
 </html>
