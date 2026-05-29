@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moojito · Darna Chicken | Feel at Home</title>
+    <title>DARNA CHICKEN · 4 Kilo | Feel at Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -19,9 +19,9 @@
         .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
         .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .logo__icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #0a0a0a; }
-        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: white; }
+        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: white; }
         .logo__text span { color: var(--gold); }
-        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
+        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 1px; }
         
         .nav__list { display: flex; gap: 32px; list-style: none; }
         .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; cursor: pointer; }
@@ -33,7 +33,7 @@
         .mobile-nav { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #0f0f0f; z-index: 201; transition: left 0.3s ease; padding: 30px 20px; border-right: 2px solid var(--gold); }
         .mobile-nav.open { left: 0; }
         .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
         .close-menu { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
         .mobile-nav-list { list-style: none; }
         .mobile-nav-list li { margin-bottom: 25px; }
@@ -47,9 +47,9 @@
         
         .hero { background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1588168333986-507ee49f93ab?w=1600&q=80') center/cover no-repeat; text-align: center; padding: 100px 24px 80px; }
         .hero__badge { display: inline-block; background: var(--red); color: white; padding: 6px 20px; border-radius: 40px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
-        .hero__title { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: white; line-height: 1.1; }
+        .hero__title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: white; line-height: 1.1; }
         .hero__title span { color: var(--gold); }
-        .hero__sub { font-size: 1.2rem; margin: 20px 0 30px; color: #ddd; }
+        .hero__sub { font-size: 1.1rem; margin: 20px 0 30px; color: #ddd; }
         .btn-primary, .btn-secondary { padding: 14px 34px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin: 0 8px; transition: 0.2s; cursor: pointer; }
         .btn-primary { background: var(--gold); color: #0a0a0a; }
         .btn-primary:hover { background: var(--gold-dark); transform: scale(1.03); }
@@ -60,7 +60,7 @@
         .section--dark { background: #0f0f0f; }
         .section__header { text-align: center; margin-bottom: 48px; }
         .section__icon { font-size: 2.5rem; margin-bottom: 10px; }
-        .section__title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 800; }
+        .section__title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 800; }
         .section__title span { color: var(--gold); }
         .section__line { width: 70px; height: 3px; background: var(--gold); margin: 14px auto 0; border-radius: 4px; }
         
@@ -76,8 +76,12 @@
         
         .cta-banner { background: var(--red); text-align: center; padding: 60px 20px; }
         .cta-banner h2 { font-size: 2rem; margin-bottom: 10px; }
+        .cta-banner p { margin-bottom: 20px; opacity: 0.9; }
         .btn-large { background: var(--gold); color: #0a0a0a; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 16px; transition: 0.2s; cursor: pointer; }
         .btn-large:hover { background: var(--gold-dark); transform: scale(1.03); }
+        
+        .location-badge { background: rgba(0,0,0,0.6); display: inline-block; padding: 5px 15px; border-radius: 30px; font-size: 0.75rem; margin-top: 15px; }
+        .location-badge i { margin-right: 5px; }
         
         .footer { background: #030303; padding: 50px 20px 30px; }
         .footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
@@ -96,20 +100,24 @@
             .desktop-nav { display: none; } 
             .mobile-menu-btn { display: block; } 
             .header__inner { justify-content: space-between; } 
-            .hero__title { font-size: 2.5rem; }
-            .btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.9rem; margin: 5px; }
+            .hero__title { font-size: 2.2rem; }
+            .btn-primary, .btn-secondary { padding: 10px 18px; font-size: 0.85rem; margin: 5px; }
+            .section__title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | <i class="fas fa-clock"></i> OPEN 10AM - 11PM | <i class="fas fa-phone"></i> CALL 098</div>
+<div class="top-bar"><i class="fas fa-map-marker-alt"></i> 4 KILO, ADDIS ABABA | <i class="fas fa-motorcycle"></i> FREE DELIVERY 1,500+ ETB | <i class="fas fa-phone"></i> CALL 098</div>
 
 <header class="header">
     <div class="container header__inner">
         <div class="logo" onclick="navigateTo('index.html')">
             <div class="logo__icon">🍗</div>
-            <div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div>
+            <div>
+                <div class="logo__text">DARNA <span>CHICKEN</span></div>
+                <div class="logo__sub">4 KILO • FAMILY RECIPE</div>
+            </div>
         </div>
         
         <nav class="desktop-nav">
@@ -129,7 +137,7 @@
 <!-- Side Mobile Navigation -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header"><h3>MOOJITO®</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <div class="mobile-nav-header"><h3>DARNA CHICKEN</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
     <ul class="mobile-nav-list">
         <li><a onclick="navigateTo('index.html')">🏠 Home</a></li>
         <li><a onclick="navigateTo('menu.html')">🍔 Menu & Offers</a></li>
@@ -149,6 +157,7 @@
             <a onclick="navigateTo('menu.html')" class="btn-primary"><i class="fas fa-utensils"></i> View Full Menu</a>
             <a href="tel:+251983333333" class="btn-secondary"><i class="fas fa-phone"></i> Call to Order</a>
         </div>
+        <div class="location-badge"><i class="fas fa-location-dot"></i> Located at 4 Kilo, Addis Ababa</div>
     </div>
 </section>
 
@@ -170,7 +179,7 @@
             <div class="section__icon">🔥</div>
             <h2 class="section__title">Most <span>Popular</span></h2>
             <div class="section__line"></div>
-            <p style="margin-top: 12px; color: #aaa;">Customer favorites you'll love</p>
+            <p style="margin-top: 12px; color: #aaa;">Customer favorites from our 4 Kilo kitchen</p>
         </div>
         <div class="preview-grid">
             <div class="preview-card" onclick="navigateTo('menu.html')">
@@ -207,9 +216,10 @@
 <!-- CTA Banner -->
 <div class="cta-banner">
     <div class="container">
-        <h2>Hungry? Let's satisfy that craving!</h2>
-        <p>Order online or give us a call — we deliver happiness to your doorstep</p>
+        <h2>Hungry? We're at 4 Kilo!</h2>
+        <p>Visit us or call for delivery — we bring happiness to your doorstep</p>
         <a href="tel:+251983333333" class="btn-large"><i class="fas fa-phone"></i> CALL 098</a>
+        <p style="margin-top: 16px; font-size: 0.8rem;"><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa (Near the roundabout)</p>
     </div>
 </div>
 
@@ -218,8 +228,9 @@
     <div class="container">
         <div class="footer__grid">
             <div class="footer__col">
-                <h3>Moojito <span>®</span></h3>
+                <h3>DARNA <span>CHICKEN</span></h3>
                 <p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p>
+                <p style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</p>
             </div>
             <div class="footer__col">
                 <h4>Quick Links</h4>
@@ -233,8 +244,8 @@
             <div class="footer__col">
                 <h4>Contact</h4>
                 <p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p>
-                <p><i class="fas fa-envelope"></i> hello@moojito.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+                <p><i class="fas fa-envelope"></i> hello@darnachicken.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa, Ethiopia</p>
             </div>
             <div class="footer__col">
                 <h4>Follow Us</h4>
@@ -247,7 +258,7 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p>
+            <p>© 2026 DARNA CHICKEN · 4 Kilo. All rights reserved. | Prices exclude 15% service + tax</p>
         </div>
     </div>
 </footer>
@@ -280,7 +291,7 @@
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
     if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
     
-    // Highlight active page in navigation
+    // Highlight active page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav__link, .mobile-nav-list a').forEach(link => {
         const onclickAttr = link.getAttribute('onclick');
