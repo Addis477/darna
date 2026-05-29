@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moojito · Menu & Offers | Darna Chicken</title>
+    <title>DARNA CHICKEN · Menu & Offers | 4 Kilo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -19,9 +19,9 @@
         .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; gap: 16px; }
         .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .logo__icon { width: 50px; height: 50px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #0a0a0a; }
-        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: white; }
+        .logo__text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: white; }
         .logo__text span { color: var(--gold); }
-        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 2px; }
+        .logo__sub { font-size: 0.65rem; color: #aaa; letter-spacing: 1px; }
         
         .nav__list { display: flex; gap: 32px; list-style: none; }
         .nav__link { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; cursor: pointer; }
@@ -33,7 +33,7 @@
         .mobile-nav { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #0f0f0f; z-index: 201; transition: left 0.3s ease; padding: 30px 20px; border-right: 2px solid var(--gold); }
         .mobile-nav.open { left: 0; }
         .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .mobile-nav-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
         .close-menu { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
         .mobile-nav-list { list-style: none; }
         .mobile-nav-list li { margin-bottom: 25px; }
@@ -80,10 +80,6 @@
         .menu-item__name { font-weight: 600; font-size: 1rem; }
         .menu-item__price { font-weight: 800; color: var(--gold); font-size: 1.1rem; }
         
-        /* Text-only card style for items without images */
-        .menu-item.text-only { display: block; }
-        .menu-item.text-only .menu-item-content { padding: 20px; }
-        
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
         .modal-content { background: #141414; border-radius: 28px; max-width: 500px; width: 90%; border: 1px solid var(--gold); overflow: hidden; animation: modalFadeIn 0.3s ease; }
         @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
@@ -123,13 +119,16 @@
 </head>
 <body>
 
-<div class="top-bar"><i class="fas fa-motorcycle"></i> FREE DELIVERY ON ORDERS 1,500+ ETB | <i class="fas fa-tag"></i> SPECIAL OFFERS! | <i class="fas fa-phone"></i> CALL 098</div>
+<div class="top-bar"><i class="fas fa-map-marker-alt"></i> 4 KILO, ADDIS ABABA | <i class="fas fa-motorcycle"></i> FREE DELIVERY 1,500+ ETB | <i class="fas fa-phone"></i> CALL 098</div>
 
 <header class="header">
     <div class="container header__inner">
         <div class="logo" onclick="navigateTo('index.html')">
             <div class="logo__icon">🍗</div>
-            <div><div class="logo__text">MOOJITO<span>®</span></div><div class="logo__sub">DARNA CHICKEN</div></div>
+            <div>
+                <div class="logo__text">DARNA <span>CHICKEN</span></div>
+                <div class="logo__sub">4 KILO • FAMILY RECIPE</div>
+            </div>
         </div>
         <nav class="desktop-nav">
             <ul class="nav__list">
@@ -146,7 +145,7 @@
 
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header"><h3>MOOJITO®</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
+    <div class="mobile-nav-header"><h3>DARNA CHICKEN</h3><button class="close-menu" id="closeMenuBtn"><i class="fas fa-times"></i></button></div>
     <ul class="mobile-nav-list">
         <li><a onclick="navigateTo('index.html')">🏠 Home</a></li>
         <li><a onclick="navigateTo('menu.html')">🍔 Menu & Offers</a></li>
@@ -171,7 +170,7 @@
 </div>
 
 <section class="page-hero">
-    <div class="container"><h1>Our <span>Menu</span> & Offers</h1><p>Click any item to see details — then call us to order!</p></div>
+    <div class="container"><h1>Our <span>Menu</span> & Offers</h1><p>Click any item to see details — then call us to order from 4 Kilo!</p></div>
 </section>
 
 <section class="container">
@@ -210,12 +209,12 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__grid">
-            <div class="footer__col"><h3>Moojito <span>®</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p></div>
+            <div class="footer__col"><h3>DARNA <span>CHICKEN</span></h3><p>Feel at home. Eat like a family.<br>Authentic Darna Chicken since 2018.</p><p style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</p></div>
             <div class="footer__col"><h4>Quick Links</h4><ul><li><a onclick="navigateTo('index.html')">Home</a></li><li><a onclick="navigateTo('menu.html')">Menu & Offers</a></li><li><a onclick="navigateTo('about.html')">About</a></li><li><a onclick="navigateTo('contact.html')">Contact</a></li></ul></div>
-            <div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@moojito.com</p><p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p></div>
+            <div class="footer__col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 098 / +251-98-333-3333</p><p><i class="fas fa-envelope"></i> hello@darnachicken.com</p><p><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa, Ethiopia</p></div>
             <div class="footer__col"><h4>Follow Us</h4><div class="social-links"><a><i class="fab fa-facebook-f"></i></a><a><i class="fab fa-instagram"></i></a><a><i class="fab fa-telegram"></i></a><a><i class="fab fa-tiktok"></i></a></div></div>
         </div>
-        <div class="footer__bottom"><p>© 2026 Moojito Darna Chicken. All rights reserved. | Prices exclude 15% service + tax</p></div>
+        <div class="footer__bottom"><p>© 2026 DARNA CHICKEN · 4 Kilo. All rights reserved. | Prices exclude 15% service + tax</p></div>
     </div>
 </footer>
 
@@ -246,11 +245,10 @@
     
     window.onclick = function(event) { if (event.target === document.getElementById('itemModal')) closeModal(); }
     
-    // Items that should NOT have images (Fish Sandwich, Double Fish Sandwich, Vegetable Sandwich)
+    // Items without images
     const noImageItems = ["Fish Sandwich", "Double Fish Sandwich", "Vegetable Sandwich"];
     
     const menuItems = [
-        // Shawarma & Chicken (with images)
         { name: "Normal Shawarma", price: 695, cat: "shawarma", img: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80", desc: "Classic chicken shawarma wrapped in fresh pita bread with garlic sauce, pickles, and vegetables.", ingredients: "Grilled chicken, pita bread, garlic sauce, pickles, lettuce, tomatoes" },
         { name: "Special Darna Shawarma", price: 782, cat: "shawarma", img: "https://images.unsplash.com/photo-1626700054175-7b2efef4d8b8?w=400&q=80", desc: "Our signature shawarma with extra meat, special spicy sauce, and toasted pita.", ingredients: "Double chicken, special Darna sauce, toasted pita, pickles, jalapenos, garlic paste" },
         { name: "Full Roasted Chicken", price: 2213, cat: "shawarma", img: "https://images.unsplash.com/photo-1594051791433-1c0eb6bcd82a?w=400&q=80", desc: "Whole chicken slow-roasted with our secret family spice blend. Served with rice.", ingredients: "Whole chicken, secret spice blend, served with seasoned rice and sauce" },
@@ -259,7 +257,6 @@
         { name: "Half Grilled Chicken", price: 948, cat: "shawarma", img: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=400&q=80", desc: "Half chicken grilled over open flame.", ingredients: "Half chicken, smoky grill flavor, served with sauce" },
         { name: "Chicken Kabsa", price: 752, cat: "shawarma", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80", desc: "Traditional spiced chicken and rice dish.", ingredients: "Chicken, basmati rice, kabsa spices, raisins, almonds" },
         { name: "Chicken Kabsa (Large)", price: 1056, cat: "shawarma", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80", desc: "Large portion of our famous kabsa.", ingredients: "Extra chicken, basmati rice, kabsa spices, raisins, almonds" },
-        // Burgers (with images)
         { name: "Special Burger 1", price: 591, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Juicy beef patty with cheese, lettuce, tomato, and special sauce.", ingredients: "Beef patty, cheddar cheese, lettuce, tomato, onion, special burger sauce, brioche bun" },
         { name: "Special Burger 2", price: 835, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Double patty special burger with extra cheese.", ingredients: "Double beef patty, double cheese, lettuce, tomato, onion, special sauce" },
         { name: "Special Burger 4", price: 904, cat: "burgers", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80", desc: "Quadruple patty burger for extreme hunger.", ingredients: "Four beef patties, four cheese slices, lettuce, tomato, special sauce" },
@@ -267,7 +264,6 @@
         { name: "Beef Burger", price: 448, cat: "burgers", img: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80", desc: "Simple and delicious beef burger.", ingredients: "Beef patty, lettuce, tomato, onion, burger sauce" },
         { name: "Chicken Sandwich", price: 800, cat: "burgers", img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=80", desc: "Grilled chicken fillet sandwich with fresh veggies.", ingredients: "Grilled chicken breast, lettuce, tomato, mayo, toasted bun" },
         { name: "Egg Sandwich", price: 322, cat: "burgers", img: "https://images.unsplash.com/photo-1525351486363-ef6f3f8c3d9b?w=400&q=80", desc: "Fried egg sandwich with cheese.", ingredients: "Fried egg, cheese, lettuce, mayo, toasted bread" },
-        // Crispy & Buckets (with images)
         { name: "Family Bucket (8 pcs)", price: 1900, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "8 pieces of our famous crispy fried chicken.", ingredients: "8 pieces of crispy chicken (legs, thighs, breasts, wings)" },
         { name: "Mega Five (5 pcs)", price: 1256, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "5 pieces of crispy fried chicken.", ingredients: "5 pieces of crispy chicken, choice of pieces" },
         { name: "Golden Four (4 pcs)", price: 1013, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "4 pieces of golden crispy chicken.", ingredients: "4 pieces of signature crispy chicken" },
@@ -275,13 +271,11 @@
         { name: "Double Delight (2 pcs)", price: 700, cat: "crispy", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=80", desc: "2 pieces of crispy chicken.", ingredients: "2 pieces of crispy chicken" },
         { name: "Chicken Wings (10 pcs)", price: 1252, cat: "crispy", img: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&q=80", desc: "10 crispy chicken wings, choose your sauce.", ingredients: "10 chicken wings, choice of mild, spicy, or BBQ sauce" },
         { name: "Chicken Wings (5 pcs)", price: 852, cat: "crispy", img: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&q=80", desc: "5 crispy chicken wings.", ingredients: "5 chicken wings, choice of sauce" },
-        // Sandwiches (Fish, Double Fish, Vegetable - NO IMAGES)
         { name: "Fish Sandwich", price: 574, cat: "sandwiches", img: null, desc: "Crispy fish fillet with tartar sauce.", ingredients: "Breaded fish fillet, lettuce, tartar sauce, soft bun" },
         { name: "Double Fish Sandwich", price: 574, cat: "sandwiches", img: null, desc: "Double fish fillet sandwich.", ingredients: "Two breaded fish fillets, lettuce, tartar sauce" },
         { name: "Tuna Sandwich", price: 558, cat: "sandwiches", img: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=400&q=80", desc: "Premium tuna salad sandwich.", ingredients: "Tuna salad, lettuce, tomato, whole wheat bread" },
         { name: "Tofu Sandwich", price: 391, cat: "sandwiches", img: "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&q=80", desc: "Vegan tofu sandwich with fresh vegetables.", ingredients: "Grilled tofu, lettuce, tomato, cucumber, vegan sauce" },
         { name: "Vegetable Sandwich", price: 322, cat: "sandwiches", img: null, desc: "Fresh vegetable sandwich.", ingredients: "Lettuce, tomato, cucumber, bell peppers, hummus" },
-        // Drinks & Sides (with images)
         { name: "Soft Drink (500ml)", price: 65, cat: "drinks", img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=400&q=80", desc: "Ice-cold soft drink.", ingredients: "Coca-Cola, Sprite, Fanta, or Pepsi" },
         { name: "Soft Drink (300ml)", price: 78, cat: "drinks", img: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=400&q=80", desc: "Can of soft drink.", ingredients: "Choice of Coca-Cola, Sprite, or Fanta" },
         { name: "Hot Beverages", price: 52, cat: "drinks", img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&q=80", desc: "Fresh brewed coffee or tea.", ingredients: "Ethiopian coffee or black tea" },
@@ -298,26 +292,10 @@
         const filtered = cat === 'all' ? menuItems : menuItems.filter(i => i.cat === cat);
         const grid = document.getElementById('menuGrid');
         grid.innerHTML = filtered.map(item => {
-            // Check if this item should have no image
             if (noImageItems.includes(item.name)) {
-                return `
-                    <div class="menu-item text-only" onclick="openModal('${item.name.replace(/'/g, "\\'")}', ${item.price}, 'https://via.placeholder.com/400x160?text=${encodeURIComponent(item.name)}', '${item.desc.replace(/'/g, "\\'")}', '${item.ingredients.replace(/'/g, "\\'")}')">
-                        <div class="menu-item-content">
-                            <span class="menu-item__name">${item.name}</span>
-                            <span class="menu-item__price">${item.price} ETB</span>
-                        </div>
-                    </div>
-                `;
+                return `<div class="menu-item" onclick="openModal('${item.name.replace(/'/g, "\\'")}', ${item.price}, 'https://placehold.co/400x160/1a1a1a/e09d32?text=${encodeURIComponent(item.name)}', '${item.desc.replace(/'/g, "\\'")}', '${item.ingredients.replace(/'/g, "\\'")}')"><div class="menu-item-content"><span class="menu-item__name">${item.name}</span><span class="menu-item__price">${item.price} ETB</span></div></div>`;
             } else {
-                return `
-                    <div class="menu-item" onclick="openModal('${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.img}', '${item.desc.replace(/'/g, "\\'")}', '${item.ingredients.replace(/'/g, "\\'")}')">
-                        <img class="menu-item-img" src="${item.img}" alt="${item.name}">
-                        <div class="menu-item-content">
-                            <span class="menu-item__name">${item.name}</span>
-                            <span class="menu-item__price">${item.price} ETB</span>
-                        </div>
-                    </div>
-                `;
+                return `<div class="menu-item" onclick="openModal('${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.img}', '${item.desc.replace(/'/g, "\\'")}', '${item.ingredients.replace(/'/g, "\\'")}')"><img class="menu-item-img" src="${item.img}" alt="${item.name}"><div class="menu-item-content"><span class="menu-item__name">${item.name}</span><span class="menu-item__price">${item.price} ETB</span></div></div>`;
             }
         }).join('');
     }
